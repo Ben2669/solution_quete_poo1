@@ -2,35 +2,28 @@
 
 require_once 'Bicycle.php';
 require_once 'Car.php';
+require_once 'Truck.php';
 
-$bike = new Bicycle();
-var_dump($bike);
+$homerTruck = new Truck("red", 2, "diesel", 200);
+var_dump($homerTruck);
 
-
-$bike->setColor("blue");
-$bike->setCurrentSpeed(0);
-var_dump($bike); // then, another dump.
-
-echo $bike->forward();
-echo '<br> Vitesse du vélo : ' . $bike->getCurrentSpeed() . ' km/h' . '<br>';
-echo $bike->brake();
-echo '<br> Vitesse du vélo : ' . $bike->getCurrentSpeed() . ' km/h' . '<br>';
-echo $bike->brake();
-
-var_dump($bike);
-$bike->dump();
-
-$homerCar = new Car("red", 4, "empty as usual");
-var_dump($homerCar);
-
-echo $homerCar->start();
+$homerTruck->setStockCapacity(300);
+var_dump($homerTruck);
+$presentStockCapacity = $homerTruck->getStockCapacity();
+echo $presentStockCapacity;
+$homerTruck->setLoad(200);
+var_dump($homerTruck);
 echo "<br>";
-echo $homerCar->forward();
+$presentLoad = $homerTruck->getLoad();
+echo $presentLoad;
 echo "<br>";
-echo $homerCar->brake();
+echo $homerTruck->forward();
 echo "<br>";
-echo $homerCar->getColor();
+echo $homerTruck->brake();
 echo "<br>";
-echo $homerCar->getNbSeats();
-echo"<br>";
-echo $homerCar->getEnergy();
+echo $homerTruck->statusCapacity($presentStockCapacity, $presentLoad);
+echo "<br>";
+$homerTruck->setLoad(300);
+$presentLoad = $homerTruck->getLoad();
+echo "<br>";
+echo $homerTruck->statusCapacity($presentStockCapacity, $presentLoad);
