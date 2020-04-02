@@ -36,6 +36,8 @@ class Truck extends Vehicle {
     public function setLoad(int $load) : int {
         if ($load <= $this->stockCapacity) {
             return $this->load = $load;
+        } else {
+            return $this->load = $this->stockCapacity;
         }
     }
 

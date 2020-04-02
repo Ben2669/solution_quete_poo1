@@ -23,7 +23,7 @@ echo $homerTruck->brake();
 echo "<br>";
 echo $homerTruck->statusCapacity($presentStockCapacity, $presentLoad);
 echo "<br>";
-$homerTruck->setLoad(300);
+$homerTruck->setLoad(400);
 $presentLoad = $homerTruck->getLoad();
 echo "<br>";
 echo $homerTruck->statusCapacity($presentStockCapacity, $presentLoad);
