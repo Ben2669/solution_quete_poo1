@@ -15,6 +15,11 @@ class Car extends Vehicle
     private $energy;
 
     /**
+     * @var boolean
+     */
+    private $hasParkBrake;
+
+    /**
      * @var int
      */
     private $energyLevel;
@@ -46,5 +51,23 @@ class Car extends Vehicle
     public function setEnergyLevel(int $energyLevel): void
     {
         $this->energyLevel = $energyLevel;
+    }
+
+    public function getParkBrake()
+    {
+        return $this->hasParkBrake;
+    }
+
+    public function setParkBrake ($hasParkBrake): void
+    {
+        $this->hasParkBrake = $hasParkBrake;
+    }
+
+    public function start(): void
+    {
+        if ($this->getParkBrake() === true) {
+            throw new Exception('Please set off your park brake before driving!');
+        }
+        echo "Engine is running";
     }
 }

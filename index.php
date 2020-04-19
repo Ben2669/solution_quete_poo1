@@ -31,7 +31,7 @@ $homerTruck->setLoad(400);
 $presentLoad = $homerTruck->getLoad();
 echo "<br>";
 echo $homerTruck->statusCapacity($presentStockCapacity, $presentLoad);
-*/
+
 $car = new Car("blue", 4, "fuel");
 $truck = new Truck("black", 4, "diesel", 200);
 $motorway = new MotorWay();
@@ -50,4 +50,22 @@ $pedestrian_way->addVehicle($bike);
 $pedestrian_way->addVehicle($skateboard);
 $pedestrian_way->addVehicle($car);
 var_dump($pedestrian_way);
+*/
+
+$car = new Car("blue", 4, "fuel");
+$car->setParkBrake(true);
+var_dump($car);
+try {
+    $car->start();
+} catch (Exception $e) {
+    $car->setParkBrake(false);
+    var_dump($car);
+} finally {
+    echo "Ma voiture roule comme un donut";
+}
+
+$car_bis = new Car("red", 2, "diesel");
+$car_bis->setParkBrake(false);
+var_dump($car_bis);
+$car_bis->start();
 
