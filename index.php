@@ -7,6 +7,7 @@ require_once 'MotorWay.php';
 require_once 'PedestrianWay.php';
 require_once 'ResidentialWay.php';
 require_once 'Skateboard.php';
+require_once 'Speedometer.php';
 /*
 $homerTruck = new Truck("red", 2, "diesel", 200);
 var_dump($homerTruck);
@@ -67,7 +68,7 @@ try {
 $car_bis = new Car("red", 2, "diesel");
 $car_bis->setParkBrake(false);
 var_dump($car_bis);
-$car_bis->start();*/
+$car_bis->start();
 
 $car = new Car("red", 4, "diesel");
 var_dump($car->switchOn());
@@ -82,7 +83,9 @@ var_dump($bike->switchOff());
 echo "<br>";
 $bike->setCurrentSpeed(7);
 var_dump($bike->switchOn());
-echo "<br>";
+echo "<br>";*/
+
+echo Speedometer::convertKmToMiles(10);
 
 
 
