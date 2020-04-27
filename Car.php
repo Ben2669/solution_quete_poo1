@@ -1,7 +1,7 @@
 <?php
 require_once 'Vehicle.php';
 
-class Car extends Vehicle
+class Car extends Vehicle implements LightableInterface
 {
 
     const ALLOWED_ENERGIES = [
@@ -69,5 +69,17 @@ class Car extends Vehicle
             throw new Exception('Please set off your park brake before driving!');
         }
         echo "Engine is running";
+    }
+
+    public function switchOn(): bool
+    {
+        // TODO: Implement switchOn() method.
+        return true;
+    }
+
+    public function switchOff(): bool
+    {
+        // TODO: Implement switchOff() method.
+        return false;
     }
 }

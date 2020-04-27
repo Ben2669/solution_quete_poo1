@@ -50,7 +50,7 @@ $pedestrian_way->addVehicle($bike);
 $pedestrian_way->addVehicle($skateboard);
 $pedestrian_way->addVehicle($car);
 var_dump($pedestrian_way);
-*/
+
 
 $car = new Car("blue", 4, "fuel");
 $car->setParkBrake(true);
@@ -67,5 +67,22 @@ try {
 $car_bis = new Car("red", 2, "diesel");
 $car_bis->setParkBrake(false);
 var_dump($car_bis);
-$car_bis->start();
+$car_bis->start();*/
+
+$car = new Car("red", 4, "diesel");
+var_dump($car->switchOn());
+echo "<br>";
+var_dump($car->switchOff());
+echo "<br>";
+$bike = new Bike("blue", 1);
+$bike->setCurrentSpeed(15);
+var_dump($bike->switchOn());
+echo "<br>";
+var_dump($bike->switchOff());
+echo "<br>";
+$bike->setCurrentSpeed(7);
+var_dump($bike->switchOn());
+echo "<br>";
+
+
 
